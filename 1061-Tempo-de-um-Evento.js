@@ -16,38 +16,22 @@ let hora2 = parseInt(horaHorário2.shift())
 let minuto2 = parseInt(horaHorário2.shift())
 let segundo2 = parseInt(horaHorário2.shift())
 
-let totalDeDia = dia2 - dia1
-let totalDeHoras = 24 - hora1 + hora2
-let totalDeMinutos = 60 - minuto1 + minuto2 
-let totalDeSegundos = segundo2 - segundo1 
 
+let tempoInicial = dia1*24*60*60 + hora1*60*60 + minuto1*60 + segundo1
 
+let tempoFinal = dia2*24*60*60 + hora2*60*60 + minuto2*60 + segundo2
 
-if(hora2 < hora1){
-     totalDeDia -=  1
-}else if(hora2 > hora1){
-     totalDeHoras = hora2 - hora1
-}else{totalDeHoras = 0
-    
-    if(minuto2 < minuto1){
-        totalDeDia -=  1
-        totalDeHoras += 1
-    }}
+let diferenca = tempoFinal - tempoInicial
+let totalDeDia = Math.floor(diferenca / (24*60*60))
+diferenca = diferenca % (24*60*60)
 
-if(minuto2 < minuto1){
-    totalDeHoras -= 1
-}else if(minuto2 > minuto1){
-    totalDeMinutos = minuto2 - minuto1
-}else{totalDeMinutos = 0
-    if(segundo2 < segundo1){
-        totalDeMinutos -= 1
-        totalDeMinutos += 1
-    }}
+let totalDeHoras = Math.floor(diferenca / (60*60))
+diferenca = diferenca % (60*60)
 
-if(segundo2 < segundo1){
-    totalDeMinutos -= 1
-    totalDeSegundos = (60 - segundo1) + segundo2
-}
+let totalDeMinutos = Math.floor(diferenca / (60))
+diferenca = diferenca % (60)
+
+totalDeSegundos = diferenca
 
 
 console.log(`${totalDeDia} dia(s)`)
