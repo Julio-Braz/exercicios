@@ -1,15 +1,18 @@
-//Próximos exercicios.
+
 
 //var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 
 
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var input = require('fs').readFileSync('./stdin', 'utf8');
 
 var valores = input.split("\n");
 
 var A = parseInt(valores.shift());
 var B = parseInt(valores.shift());
 
-var X = A + B;
+function calculo(){
+X = A + B ;
+console.log(`X = ${X}`);
+}
 
-console.log("X = " + X);
+calculo()

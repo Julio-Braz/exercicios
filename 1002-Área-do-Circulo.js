@@ -1,12 +1,14 @@
 
 
-var input = require('fs').readFileSync('/dev/stdin','utf8');
+var input = require('fs').readFileSync('./stdin','utf8');
 
 var raio = parseFloat(input);
 
 var π = 3.14159;
 
-var area = π * Math.pow(raio,2);
+function calculo (){
 
-
-console.log("A="+area.toFixed(4))
+ area = π * Math.pow(raio,2);
+ console.log("A="+area.toFixed(4))
+}
+calculo();
