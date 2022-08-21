@@ -1,0 +1,16 @@
+var input = require('fs').readFileSync('./stdin','utf8');
+let valores = input.split('\n').map(Number)
+let calculo = 0
+let quantidade = 0
+
+for (const idade of valores) {
+    if(idade > 0 ){
+    calculo += idade
+    quantidade ++
+    }
+        else{
+            break
+        }
+}
+let media = calculo / quantidade 
+console.log(media.toFixed(2))
