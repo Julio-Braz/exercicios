@@ -1,0 +1,29 @@
+var input = require('fs').readFileSync('./stdin','utf8');
+
+let valores = input.split('\n').map(Number)
+const casos = parseInt(valores.shift())
+let divisores = 0
+
+for(i = 0 ; i < casos ; i++){
+for(j = 1; j <= valores[i]; j++){
+    
+    if(valores[i] % j === 0){
+        divisores++
+       
+    }
+    if(divisores > 2){
+        divisores = 0
+        console.log(`${valores[i]} nao eh primo`)
+        break
+    }else if(valores[i] === 1){
+        divisores = 0
+        console.log(`${valores[i]} nao eh primo`)
+        break
+    }
+
+}if(divisores == 2){
+    divisores = 0
+    console.log(`${valores[i]} eh primo`)
+    
+}
+}    
