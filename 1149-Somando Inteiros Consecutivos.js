@@ -1,6 +1,6 @@
 var input = require('fs').readFileSync('./stdin','utf8');
 
-let valores =input.split(' ').map(Number)
+let valores = input.split(' ').map(Number)
 
 let A = valores.shift()
 let N = 0
